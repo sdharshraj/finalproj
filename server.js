@@ -12,11 +12,14 @@ app.all('*', function(req, res, next) {
 	next();
 });
 
+//middleware 
 app.use(express.static('www'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
 	"extended": false
 }));
+
+//routing
 
 app.get('/employee', employee.findAll);
 app.get('/employee/:id', employee.findById);
